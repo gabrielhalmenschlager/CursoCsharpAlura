@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound03", "ScreenSoun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound", "OrientacaoObjetos\ScreenSound.csproj", "{6747BB8B-0463-1F62-5797-B78BA0060110}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenSound04", "ScreenSound04", "{684D704E-0416-4D4F-902F-0CEA876D0C92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound04", "..\curso-csharp-alura\ScreenSound04\ScreenSound04.csproj", "{DF1C164C-591D-BF33-5CE9-7791764ED970}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{6747BB8B-0463-1F62-5797-B78BA0060110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6747BB8B-0463-1F62-5797-B78BA0060110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6747BB8B-0463-1F62-5797-B78BA0060110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1C164C-591D-BF33-5CE9-7791764ED970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1C164C-591D-BF33-5CE9-7791764ED970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1C164C-591D-BF33-5CE9-7791764ED970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1C164C-591D-BF33-5CE9-7791764ED970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{0A3B8834-A798-4DBE-817D-B2B9828E58AC} = {D8784464-83CF-4EEB-907F-ADA5710CB8ED}
 		{67FC2876-3CEF-4C4A-A35C-40415A53759D} = {380A7511-A354-6D7A-0CC0-8FA1F1BA7B6C}
 		{6747BB8B-0463-1F62-5797-B78BA0060110} = {D273AAFC-634F-4545-9A21-6CCF98D7E5CA}
+		{DF1C164C-591D-BF33-5CE9-7791764ED970} = {684D704E-0416-4D4F-902F-0CEA876D0C92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D3F9D5F-1077-41B4-822B-3095158D9386}
