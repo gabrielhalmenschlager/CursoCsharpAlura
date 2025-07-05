@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndpointLivro", "EndpointLi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenSound05", "ScreenSound05", "{4105F886-47B7-40A5-945E-3F8F6CAFA15B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound", "ScreenSound05\ScreenSound\ScreenSound.csproj", "{76C01C4E-7F09-B276-67BC-74C525FE28E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSound05", "ScreenSound05\ScreenSound\ScreenSound05.csproj", "{76C01C4E-7F09-B276-67BC-74C525FE28E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
