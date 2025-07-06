@@ -7,6 +7,7 @@ namespace ScreenSound05.Banco;
 internal class ScreenSoundContext : DbContext
 {
     public DbSet<Artista> Artistas { get; set; }
+    public DbSet<Musica> Musicas { get; set; }
 
     private string _connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSound05;Integrated Security=True;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
