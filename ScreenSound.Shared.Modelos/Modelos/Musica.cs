@@ -2,9 +2,11 @@
 
 public class Musica
 {
-    public Musica(string nome)
+    public Musica(string nome, int artistaId, int anoLancamento)
     {
         Nome = nome;
+        Id = artistaId; 
+        AnoLancamento = anoLancamento;
     }
 
     public string Nome { get; set; }
