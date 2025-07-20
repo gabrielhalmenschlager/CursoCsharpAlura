@@ -76,7 +76,7 @@ public static class MusicasExtensions
 
     }
 
-    private static ICollection<Genero> GeneroRequestConverter(ICollection<GenerosRequest> generos, DAL<Genero> dalGenero)
+    private static ICollection<Genero> GeneroRequestConverter(ICollection<GeneroRequest> generos, DAL<Genero> dalGenero)
     {
         var listaDeGeneros = new List<Genero>();
         foreach (var item in generos)
@@ -94,7 +94,7 @@ public static class MusicasExtensions
         }
         return listaDeGeneros;
     }
-    private static Genero RequestToEntity(GenerosRequest genero)
+    private static Genero RequestToEntity(GeneroRequest genero)
     {
         return new Genero() { Nome = genero.Nome, Descricao = genero.Descricao };
     }
