@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using ScreenSound.Modelos;
 using ScreenSound.Shared.Modelos.Modelos;
 using System;
@@ -20,6 +21,10 @@ public class ScreenSoundContext: DbContext
     public ScreenSoundContext(DbContextOptions options) : base(options)
     {
 
+    }
+
+    public ScreenSoundContext()
+    {
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

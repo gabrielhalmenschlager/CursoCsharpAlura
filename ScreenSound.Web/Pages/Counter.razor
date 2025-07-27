@@ -1,8 +1,14 @@
-﻿@page "/Artistas"
+﻿<h1>Counter</h1>
 
-<h3>Artistas</h3>
-<h4>@Mensagem</h4>
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    public string? Mensagem { get; set; } = "Olá Mundo!";
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
 }
