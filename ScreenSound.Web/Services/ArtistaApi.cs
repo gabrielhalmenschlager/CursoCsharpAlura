@@ -31,4 +31,9 @@ public class ArtistaApi
     {
         return await _httpClient.GetFromJsonAsync<ArtistaResponse>($"artistas/{nome}");
     }
+
+    public async Task UpdateArtistaAsync(ArtistaRequestEdit artista)
+    {
+        await _httpClient.PutAsJsonAsync($"artistas", artista);
+    }
 }

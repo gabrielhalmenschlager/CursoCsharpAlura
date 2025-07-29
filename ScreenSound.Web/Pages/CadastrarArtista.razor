@@ -23,7 +23,13 @@
                       Required="true"
                       RequiredError="Campo obrigatório." />
 
-        <div class="d-flex align-center justify-space-between mt-4">
+        <div class="mt-4">
+            <MudButton Variant="Variant.Filled"
+                       @onclick="Voltar"
+                       Color="Color.Default"
+                       Class="ml-auto">
+                Voltar
+            </MudButton>
             <MudButton Variant="Variant.Filled"
                        @onclick="Cadastrar"
                        Color="Color.Primary"
@@ -43,6 +49,11 @@
     {
         var request = new ArtistaRequest(nome!, biografia!);
         await artistasApi.AddArtistaAsync(request);
+        navigationManager.NavigateTo("/Artistas");
+    }
+
+    private async Task Voltar()
+    {
         navigationManager.NavigateTo("/Artistas");
     }
 }
