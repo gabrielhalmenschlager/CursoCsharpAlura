@@ -5,10 +5,14 @@
 
 @if(artistas is not null)
 {
-    foreach (var artista in artistas)
+    <MudGrid>
+    @foreach (var artista in artistas)
     {
-        <p>@artista.Nome</p>
+        <MudItem xs="3">
+            <CardArtista Artista="artista"/>
+        </MudItem>
     }
+    </MudGrid>
 }
 
 @code {
