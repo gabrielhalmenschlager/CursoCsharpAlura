@@ -2,15 +2,13 @@
 @inject ArtistaApi artistasApi
 @inject NavigationManager navigationManager
 
-
-
 <MudPaper Class="px-8 pt-2 pb-4 mx-12 my-8" Justify="Justify.Center">
 
     <MudText Class="mt-8" Typo="Typo.h4">Cadastro do Artista</MudText>
 
     <MudForm>
 
-        <MudTextField Class="mt-4" T="string" Placeholder="Nome do Artista"
+       <MudTextField Class="mt-4" T="string" Placeholder="Nome do Artista"
                       Variant="Variant.Outlined"
                       @bind-Value="nome"
                       Required="true"
@@ -22,6 +20,19 @@
                       Lines="4"
                       Required="true"
                       RequiredError="Campo obrigatório." />
+                            
+        <MudImage Class="mt-4" src="@fileImage" />
+        <MudFileUpload T="IBrowserFile" Accept=".jpeg" FilesChanged="UploadFile" >
+            <ButtonTemplate>
+                <MudButton HtmlTag="label"
+                            Variant="Variant.Filled"
+                            Color="Color.Primary"
+                            StartIcon="@Icons.Material.Filled.PhotoCamera"
+                            for="@context">
+                    Foto de Perfil
+                </MudButton>
+            </ButtonTemplate>
+        </MudFileUpload>
 
         <div class="mt-4">
             <MudButton Variant="Variant.Filled"
@@ -44,6 +55,7 @@
 @code {
     private string? nome;
     private string? biografia;
+    private string? fileImage;
 
     private async Task Cadastrar()
     {
@@ -55,5 +67,18 @@
     private async Task Voltar()
     {
         navigationManager.NavigateTo("/Artistas");
+    }
+
+    private async Task UploadFile(IBrowserFile file)
+    {
+        long maxFileSize = 1024 * 1024 * 15;
+        var format = "image/jpeg";
+        var resizedImage = await file.RequestImageFileAsync(format, 200, 200);
+
+        using var fileStream = resizedImage.OpenReadStream();
+        using var memoryStream = new MemoryStream();
+        await fileStream.CopyToAsync(memoryStream);
+
+        fileImage = $"data:{format};base64,{Convert.ToBase64String(memoryStream.ToArray())}";
     }
 }
