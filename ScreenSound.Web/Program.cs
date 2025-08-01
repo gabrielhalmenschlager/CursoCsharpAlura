@@ -12,6 +12,7 @@ builder.Services.AddMudServices();
 
 builder.Services.AddTransient<ArtistaApi>();
 builder.Services.AddTransient<MusicaApi>();
+builder.Services.AddTransient<GeneroApi>();
 
 builder.Services.AddHttpClient("API", client => {
     client.BaseAddress = new Uri(builder.Configuration["APIServer:Url"]!);
