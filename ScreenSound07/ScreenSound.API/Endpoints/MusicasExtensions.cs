@@ -8,7 +8,7 @@ using ScreenSound.Shared.Modelos.Modelos;
 namespace ScreenSound.API.Endpoints;
 
 public static class MusicasExtensions
-{ 
+{
     public static void AddEndPointsMusicas(this WebApplication app)
     {
         #region Endpoint Músicas
@@ -34,15 +34,15 @@ public static class MusicasExtensions
 
         });
 
-        app.MapPost("/Musicas", ([FromServices] DAL<Musica> dal, [FromServices] DAL<Genero> dalGenero,[FromBody] MusicaRequest musicaRequest) =>
+        app.MapPost("/Musicas", ([FromServices] DAL<Musica> dal, [FromServices] DAL<Genero> dalGenero, [FromBody] MusicaRequest musicaRequest) =>
         {
-            var musica = new Musica(musicaRequest.nome) 
-            {                 
+            var musica = new Musica(musicaRequest.nome)
+            {
                 ArtistaId = musicaRequest.ArtistaId,
                 AnoLancamento = musicaRequest.anoLancamento,
-                Generos = musicaRequest.Generos is not null?GeneroRequestConverter(musicaRequest.Generos, dalGenero) :
+                Generos = musicaRequest.Generos is not null ? GeneroRequestConverter(musicaRequest.Generos, dalGenero) :
                 new List<Genero>()
-                
+
             };
             dal.Adicionar(musica);
             return Results.Ok();
@@ -76,11 +76,11 @@ public static class MusicasExtensions
 
     private static ICollection<Genero> GeneroRequestConverter(ICollection<GeneroRequest> generos, DAL<Genero> dalGenero)
     {
-       var listaDeGeneros = new List<Genero>();
+        var listaDeGeneros = new List<Genero>();
         foreach (var item in generos)
         {
             var entity = RequestToEntity(item);
-            var genero = dalGenero.RecuperarPor(g=>g.Nome.ToUpper().Equals(item.Nome.ToUpper()));
+            var genero = dalGenero.RecuperarPor(g => g.Nome.ToUpper().Equals(item.Nome.ToUpper()));
             if (genero is not null)
             {
                 listaDeGeneros.Add(genero);
